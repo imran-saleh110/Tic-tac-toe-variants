@@ -1,1 +1,109 @@
+:root {
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --surface-hover: #252525;
+  --border: #333;
+  --text: #e0e0e0;
+  --text-muted: #888;
+  --available: #2a2a2a;
+  --available-hover: #3a3a3a;
+  --player-one: #c0392b;
+  --player-two: #e06c00;
+  --font: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.body {
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.grid-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.grid-row {
+  border-radius: 6px;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.box {
+  width: 120px;
+  height: 120px;
+  border-radius: 6px 6px 3px 3px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.65rem;
+  font-family: var(--font);
+  color: var(--text-muted);
+  background: var(--available);
+  transition:
+    background 0.2s,
+    transform 0.15s;
+}
+
+.box:hover:not(.box--player-one):not(.box--player-two) {
+  background: var(--available-hover);
+  transform: scale(1.08);
+}
+
+.box--player-one {
+  background: var(--player-one);
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.box--player-two {
+  background: var(--player-two);
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.legend {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.legend-swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px 3px 2px 2px;
+}
