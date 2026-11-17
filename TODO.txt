@@ -1,0 +1,7 @@
+TODO:
+
+- write ben orlin's version of tic,tac,toe
+- playing with computer
+- playing with friends
+- making a TUI from scratch
+- making a GUI from scratch
